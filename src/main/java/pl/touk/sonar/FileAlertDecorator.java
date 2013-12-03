@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.sonar.api.batch.*;
+import org.sonar.api.config.Settings;
 import org.sonar.api.i18n.I18n;
 import org.sonar.api.measures.CoreMetrics;
 import org.sonar.api.measures.Measure;
@@ -27,12 +28,12 @@ public class FileAlertDecorator implements Decorator {
     private static final Logger LOG = LoggerFactory.getLogger(FileAlertDecorator.class);
     private static final String VARIATION_METRIC_PREFIX = "new_";
     private static final String VARIATION = "variation";
+    private RulesProfile profile;
+    private I18n i18n;
+    private boolean enabled;
 
-    private final RulesProfile profile;
-    private final I18n i18n;
-
-
-    public FileAlertDecorator( RulesProfile profile, I18n i18n) {
+    public FileAlertDecorator(Settings settings, RulesProfile profile, I18n i18n) {
+        this.enabled = settings.getBoolean(PropertyKey.FILE_ALERTS_ENABLED);
         this.profile = profile;
         this.i18n = i18n;
     }
@@ -58,7 +59,8 @@ public class FileAlertDecorator implements Decorator {
 
 
     public boolean shouldExecuteOnProject(Project project) {
-        return profile != null
+        return enabled
+                && profile != null
                 && profile.getAlerts() != null
                 && profile.getAlerts().size() > 0;
     }
@@ -78,7 +80,7 @@ public class FileAlertDecorator implements Decorator {
             }
 
             Metric.Level level = AlertUtils.getLevel(alert, measure);
-            LOG.info("Alert {} has level {}", alert, level);
+            LOG.info("Alert raised on file {}: {} with level {}", context.getResource(), alert.getMetric().getName(), level);
             if (level == Metric.Level.OK) {
                 return;
             }

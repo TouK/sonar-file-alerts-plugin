@@ -9,7 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 
 @Properties({
-        @Property(key = PropertyKey.FILE_ALERT_ENABLED, name = PropertyKey.FILE_ALERT_ENABLED, defaultValue = "false", type = PropertyType.BOOLEAN)
+        @Property(key = PropertyKey.FILE_ALERTS_ENABLED, name = "Enable alert generation at file level", defaultValue = "false", type = PropertyType.BOOLEAN)
 })
 
 public final class FileAlertPlugin extends SonarPlugin {
