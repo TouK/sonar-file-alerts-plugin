@@ -72,7 +72,6 @@ public class FileAlertDecorator implements Decorator {
     }
 
     private void decorateResource(DecoratorContext context) {
-        LOG.info("Decoration on resource {}", context.getResource());
         for (final Alert alert : profile.getAlerts()) {
             Measure measure = context.getMeasure(alert.getMetric());
             if (measure == null) {
@@ -80,11 +79,11 @@ public class FileAlertDecorator implements Decorator {
             }
 
             Metric.Level level = AlertUtils.getLevel(alert, measure);
-            LOG.info("Alert raised on file {}: {} with level {}", context.getResource(), alert.getMetric().getName(), level);
             if (level == Metric.Level.OK) {
                 return;
             }
 
+            LOG.info("Alert raised on file {}: {} with level {}", context.getResource(), alert.getMetric().getName(), level);
             measure.setAlertStatus(level);
             measure.setAlertText(getText(alert, level));
             context.saveMeasure(measure);
