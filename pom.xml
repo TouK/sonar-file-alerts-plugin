@@ -12,6 +12,19 @@
     <description>This plugin raises alerts on file level in Sonar. It extends default behaviour, which raises alerts
         only at root project level.
     </description>
+    <url>https://github.com/TouK/sonar-file-alerts-plugin</url>
+    <issueManagement>
+        <system>github</system>
+        <url>https://github.com/TouK/sonar-file-alerts-plugin/issues</url>
+    </issueManagement>
+    <scm>
+        <url>git@github.com:TouK/sonar-file-alerts-plugin.git</url>
+    </scm>
+    <licenses>
+        <license>
+            <name>Apache License</name>
+        </license>
+    </licenses>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
