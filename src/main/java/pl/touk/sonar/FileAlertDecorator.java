@@ -83,7 +83,7 @@ public class FileAlertDecorator implements Decorator {
                 return;
             }
 
-            LOG.info("Alert raised on file {}: {} with level {}", context.getResource(), alert.getMetric().getName(), level);
+            LOG.debug("Alert raised on file {}: {} with level {}", context.getResource(), alert.getMetric().getName(), level);
             measure.setAlertStatus(level);
             measure.setAlertText(getText(alert, level));
             context.saveMeasure(measure);
