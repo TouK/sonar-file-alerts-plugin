@@ -12,6 +12,10 @@
     <description>This plugin raises alerts on file level in Sonar. It extends default behaviour, which raises alerts
         only at root project level.
     </description>
+    <organization>
+        <name>TouK</name>
+        <url>http://touk.pl</url>
+    </organization>
     <url>https://github.com/TouK/sonar-file-alerts-plugin</url>
     <issueManagement>
         <system>github</system>
