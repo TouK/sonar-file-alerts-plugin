@@ -15,7 +15,7 @@ Requirements
 Installation
 ------------
 
-There is a build package available here: TODO version 1.0 release file link.
+There is a build package available here: [sonar-file-alerts-plugin-1.0.jar](https://github.com/TouK/sonar-file-alerts-plugin/releases/download/sonar-file-alerts-plugin-1.0/sonar-file-alerts-plugin-1.0.jar).
 
 Or you can build it for yourself. Clone this repository, package it and put a package to your sonar plugins directory.
 
