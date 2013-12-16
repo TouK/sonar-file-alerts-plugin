@@ -5,7 +5,7 @@
     <groupId>pl.touk</groupId>
     <artifactId>sonar-file-alerts-plugin</artifactId>
     <packaging>sonar-plugin</packaging>
-    <version>1.0</version>
+    <version>1.1-SNAPSHOT</version>
 
     <name>Sonar File Alerts Plugin</name>
     <description>This plugin raises alerts on file level in Sonar. It extends default behaviour, which raises alerts
