@@ -24,7 +24,7 @@
     <scm>
         <url>git@github.com:TouK/sonar-file-alerts-plugin.git</url>
         <connection>scm:git:https://github.com/TouK/sonar-file-alerts-plugin.git</connection>
-        <developerConnection>scm:git:git://github.com:TouK/sonar-file-alerts-plugin.git</developerConnection>
+        <developerConnection>scm:git:git@github.com:TouK/sonar-file-alerts-plugin.git</developerConnection>
     </scm>
     <licenses>
         <license>
