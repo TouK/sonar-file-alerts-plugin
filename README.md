@@ -1,7 +1,7 @@
 Sonar File Alerts Plugin
 ========================
 
-This plugin raises alerts on file level in Sonar. It extends default behaviour, which raises alerts only at root project level.
+This plugin raises alerts on file level in Sonar. It extends default behaviour, which raises alerts only at root project level. It is useful when you create alert rules like "Code Coverage < 60". Each file is checked against this rule!
 
 It is intended to use in conjunction with our other plugin: [Sonar Gerrit Plugin](https://github.com/TouK/sonar-gerrit-plugin). It builds and report Gerrit's awaiting patchsets.
 
